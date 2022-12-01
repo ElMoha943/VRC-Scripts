@@ -1,4 +1,4 @@
-﻿using UdonSharp;
+using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
@@ -59,21 +59,21 @@ public class LocalSettings : UdonSharpBehaviour
 
     public void ButtonPress_Lights(){
         Lights.SetActive(!Lights.activeSelf);
-        btn_Lights.GetComponent<Image>().color = localLights ? Color.green : Color.red;
+        btn_Lights.GetComponent<Image>().color = Lights ? Color.green : Color.red;
     }
 
     public void ButtonPress_Disco(){
         Disco.SetActive(!Disco.activeSelf);
-        btn_Disco.GetComponent<Image>().color = localDisco ? Color.green : Color.red;
+        btn_Disco.GetComponent<Image>().color = Disco ? Color.green : Color.red;
     }
 
     public void ButtonPress_Shadders(){
         Shadders.SetActive(!Shadders.activeSelf);
-        btn_Shadder.GetComponent<Image>().color = localShadders ? Color.green : Color.red;
+        btn_Shadder.GetComponent<Image>().color = Shadders ? Color.green : Color.red;
     }
 
     public void ButtonPress_Season(){
         Season.SetActive(!Season.activeSelf);
-        btn_Season.GetComponent<Image>().color = localSeason ? Color.green : Color.red;
+        btn_Season.GetComponent<Image>().color = Season ? Color.green : Color.red;
     }
 }
