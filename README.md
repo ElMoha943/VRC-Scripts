@@ -4,7 +4,28 @@ A collection of UdonSharp scripts for vrchat.
 
 Disclaimer: some scripts are outdated due to recent changes in the game api. Mostly any function that uses custom network events. If you wish an update send me a message and i will do it.
 
-## VRC-WhitelistTeleport
+## ChairGame
+
+An implementation of the "Musical Chairs" game made for "Xtasis Island Paradise" club.
+
+## LocalSettings
+
+A localSettings pannel made for "El Pecado" club, has multiple optimization options:
+
+* Lights
+* Disco Ball
+* Shadder Effects
+* Post Processesing
+* Low polly assets
+* Colliders
+* PickUps
+* Seasonal Decorations
+
+## ControlTablet
+
+An admin tablet made for "El Pecado" club used to control various map toggles, as well as providing some utilities like teleport to common areas, respawn objets, etc.
+
+## WhitelistTeleport
 Teleport toggle for staff/vip. Put an empty gameObject on the target field, thats the place where the user will be teleported. Add allowed users under StaffList.
 
 ## RussianRoullete
