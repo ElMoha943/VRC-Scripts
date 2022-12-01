@@ -10,16 +10,7 @@ An implementation of the "Musical Chairs" game made for "Xtasis Island Paradise"
 
 ## LocalSettings
 
-A localSettings pannel made for "El Pecado" club, has multiple optimization options:
-
-* Lights
-* Disco Ball
-* Shadder Effects
-* Post Processesing
-* Low polly assets
-* Colliders
-* PickUps
-* Seasonal Decorations
+A localSettings pannel made for "El Pecado" club, has multiple optimization options.
 
 ## ControlTablet
 
