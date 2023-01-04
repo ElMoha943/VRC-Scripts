@@ -20,3 +20,9 @@ A russian rullete script for vrchat with configurable teleport zone, and fire/mi
 
 ## DrinkingRoullete
 A modified version of [This Roullete](https://ko-fi.com/s/6a6aa3541c), more optimized and adjusted to work vertically. Made for "Xtasis Island Paradise" Club.
+
+## Limbo
+A game of limbo designed for "El Pecado". 3D Model by Miko.
+
+## KeyPad
+Custom version of Party Zone´s Keypad, optimized and rewritted to work with the ControlTablet
