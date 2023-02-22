@@ -207,9 +207,7 @@ public class TabletDanny : UdonSharpBehaviour
 
         public void ButtonPress_AddtoVIP(){
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
-            targetid = target.playerId; // Set targetid to target player id
-            mode = 3;
-            RequestSerialization(); // Request sync
+            keypad.GetComponent<Keypad_Main>().VIPLogin(target);
         }
 
         public void ButtonPress_GotoPlayer(){
@@ -237,18 +235,11 @@ public class TabletDanny : UdonSharpBehaviour
                 break;
             case 1:
                 if(Networking.LocalPlayer == targett) // Bring
-                    Networking.LocalPlayer.TeleportTo(local.GetPosition(), local.GetRotation()); // Teleport target to local
+                    SendCustomEventDelayedFrames("_bringPlayer", 1);
                 break;
             case 2:
-                if(Networking.LocalPlayer == targett){ //Ban
-                    Networking.LocalPlayer.TeleportTo(zone_ban.transform.position, zone_ban.transform.rotation); // Teleport to ban zone
-                    spawn.transform.position = zone_ban.transform.position; // Set spawn to ban zone
-                }
-                break;
-            case 3:
-                if(Networking.LocalPlayer == targett){ // VIP
-                    GameObject.Find("Keypad").GetComponent<Keypad>().VIPLogin(targett);
-                }
+                if(Networking.LocalPlayer == targett) //ban
+                    SendCustomEventDelayedFrames("_banPlayer", 1);
                 break;
         }
     }
@@ -259,6 +250,19 @@ public class TabletDanny : UdonSharpBehaviour
         toggle_Stage.SetActive(isActive_Stage);
         toggle_Shadder.SetActive(isActive_Shadder);
         toggle_Logo.SetActive(isActive_Logo);
+    }
+    
+    public void _bringPlayer(){
+        Networking.LocalPlayer.TeleportTo(local.GetPosition(), local.GetRotation());
+    }
+
+    public void _banPlayer(){
+        VRCPlayerApi abuser = Networking.LocalPlayer;
+        abuser.TeleportTo(zone_ban.transform.position,zone_ban.transform.rotation); // Teleport player to ban zone
+        spawn.transform.position = zone_ban.transform.position; // Set spawn position to ban zone
+        abuser.Immobilize(true); // Freeze player
+        abuser.SetVoiceGain(0); // Mute player
+        abuser.SetAvatarAudioGain(0); // Mute player avatar
     }
 
     public void openprofile(VRCPlayerApi player){
