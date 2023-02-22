@@ -10,6 +10,9 @@ using TMPro;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class Keypad_Main : UdonSharpBehaviour
 {
+    [Tooltip("Set this to true if you the master of the instance to be logged as Admin")]
+    public bool isMasterAdmin = false;
+
     [Header("Passwords")]
     public string adminPassword;
     public string staffPassword;
@@ -24,7 +27,6 @@ public class Keypad_Main : UdonSharpBehaviour
     public string[] DJ;
     [Header("Write VIP Display Names Here")]
     public string[] VIP;
-
 
     [Header("Set the objects you want to show and hide for each position")]
     [Header("Admin Show And Hide Objects")]
@@ -47,7 +49,6 @@ public class Keypad_Main : UdonSharpBehaviour
     private string inputString;
     private bool loggedIn = false;
 
-
     [HideInInspector] public string Key;
 
     public void Start(){
@@ -60,13 +61,21 @@ public class Keypad_Main : UdonSharpBehaviour
         VRCPlayerApi targetPlayer = Networking.LocalPlayer;
         string displayName = targetPlayer.displayName;
 
+        // Autologin Master
+        if (isMasterAdmin && targetPlayer.isMaster){
+            targetPlayer.SetPlayerTag("Position", "Admin");
+            AdminLogin(targetPlayer);
+            Debug.Log(displayName + " has been given the tag " + "Admin");
+            return;
+        }
+
         //Loop through admin names then send staff auto login to keypad
         for (int i = 0; i < Admin.Length; i++){
             if (string.IsNullOrEmpty(Admin[i])) continue;
             if (Admin[i] == displayName){	
                 targetPlayer.SetPlayerTag("Position", "Admin");
                 AdminLogin(targetPlayer);
-                Debug.Log(targetPlayer.displayName + " has been given the tag " + "Admin");
+                Debug.Log(displayName + " has been given the tag " + "Admin");
                 return;
             }
         }
@@ -77,7 +86,7 @@ public class Keypad_Main : UdonSharpBehaviour
             if (Staff[i] == displayName){
                 targetPlayer.SetPlayerTag("Position", "Staff");
                 StaffLogin(targetPlayer);
-                Debug.Log(targetPlayer.displayName + " has been given the tag " + "Staff");
+                Debug.Log(displayName + " has been given the tag " + "Staff");
                 return;
             }
         }
@@ -88,7 +97,7 @@ public class Keypad_Main : UdonSharpBehaviour
             if (DJ[i] == displayName){
                 targetPlayer.SetPlayerTag("Position", "DJ");
                 DJLogin(targetPlayer);
-                Debug.Log(targetPlayer.displayName + " has been given the tag " + "DJ");
+                Debug.Log(displayName + " has been given the tag " + "DJ");
                 return;
             }
         }
@@ -99,7 +108,7 @@ public class Keypad_Main : UdonSharpBehaviour
             if (VIP[i] == displayName){
                 targetPlayer.SetPlayerTag("Position", "VIP");
                 VIPLogin(targetPlayer);
-                Debug.Log(targetPlayer.displayName + " has been given the tag " + "VIP");
+                Debug.Log(displayName + " has been given the tag " + "VIP");
                 return;
             }
         }
