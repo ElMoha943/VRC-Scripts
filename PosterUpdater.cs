@@ -24,7 +24,7 @@ public class PosterUpdater : UdonSharpBehaviour
         _udonEventReceiver = (IUdonEventReceiver)this;
         var rgbInfo = new TextureInfo();
         rgbInfo.GenerateMipMaps = true;
-        _imageDownloader.DownloadImage(imageUrls[_loadedIndex], renderer.material, _udonEventReceiver, rgbInfo);
+        _imageDownloader.DownloadImage(imageUrl, renderer.material, _udonEventReceiver, rgbInfo);
     }
 
     public override void OnImageLoadSuccess(IVRCImageDownload result)
