@@ -10,13 +10,13 @@ using VRC.Udon.Common.Interfaces;
 public class PosterUpdater : UdonSharpBehaviour
 {
     [SerializeField, Tooltip("URL of the image to load")]
-    private VRCUrl imageUrl;
+    VRCUrl imageUrl;
     
     [SerializeField, Tooltip("Renderer to show downloaded image.")]
-    private new Renderer renderer;
+    new Renderer renderer;
     
-    private VRCImageDownloader _imageDownloader;
-    private IUdonEventReceiver _udonEventReceiver;
+    VRCImageDownloader _imageDownloader;
+    IUdonEventReceiver _udonEventReceiver;
     
     private void Start()
     {
