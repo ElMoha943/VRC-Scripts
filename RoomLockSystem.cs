@@ -8,10 +8,10 @@ using VRC.Udon.Common.Interfaces;
 public class RoomLockSystem : UdonSharpBehaviour
 {
     [Header("Room Locks")]
-    public GameObject R1;
-    public GameObject R2;
-    public GameObject R3;
-    public GameObject R4;
+    [SerializeField] GameObject R1;
+    [SerializeField] GameObject R2;
+    [SerializeField] GameObject R3;
+    [SerializeField] GameObject R4;
 
     [HideInInspector][UdonSynced] public bool R1Locked = false;
     [HideInInspector][UdonSynced] public bool R2Locked = false;
@@ -28,7 +28,6 @@ public class RoomLockSystem : UdonSharpBehaviour
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         R1Locked = !R1Locked;
         RequestSerialization();
-        Candado1.SetActive(R1Locked);
         R1.SetActive(!R1Locked);
     }
 
@@ -36,7 +35,6 @@ public class RoomLockSystem : UdonSharpBehaviour
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         R2Locked = !R2Locked;
         RequestSerialization();
-        Candado2.SetActive(R2Locked);
         R2.SetActive(!R2Locked);
     }
 
@@ -44,7 +42,6 @@ public class RoomLockSystem : UdonSharpBehaviour
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         R3Locked = !R3Locked;
         RequestSerialization();
-        Candado3.SetActive(R3Locked);
         R3.SetActive(!R3Locked);
     }
 
@@ -52,7 +49,6 @@ public class RoomLockSystem : UdonSharpBehaviour
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         R4Locked = !R4Locked;
         RequestSerialization();
-        Candado4.SetActive(R4Locked);
         R4.SetActive(!R4Locked);
     }
     
