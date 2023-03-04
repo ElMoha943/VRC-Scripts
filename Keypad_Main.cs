@@ -14,10 +14,10 @@ public class Keypad_Main : UdonSharpBehaviour
     public bool isMasterAdmin = false;
 
     [Header("Passwords")]
-    public string adminPassword;
-    public string staffPassword;
-    public string dJPassword;
-    public string vIPPassword;
+    [SerializeField] string adminPassword;
+    [SerializeField] string staffPassword;
+    [SerializeField] string dJPassword;
+    [SerializeField] string vIPPassword;
 
     [Header("Write Admin Display Names Here")]
     public string[] Admin;
@@ -30,24 +30,24 @@ public class Keypad_Main : UdonSharpBehaviour
 
     [Header("Set the objects you want to show and hide for each position")]
     [Header("Admin Show And Hide Objects")]
-    public GameObject[] adminShowObjects;
-    public GameObject[] adminHideObjects;
+    [SerializeField] GameObject[] adminShowObjects;
+    [SerializeField] GameObject[] adminHideObjects;
     [Header("Staff Show And Hide Objects")]
-    public GameObject[] staffShowObjects;
-    public GameObject[] staffHideObjects;
+    [SerializeField] GameObject[] staffShowObjects;
+    [SerializeField] GameObject[] staffHideObjects;
     [Header("DJ Show And Hide Objects")]
-    public GameObject[] dJShowObjects;
-    public GameObject[] dJHideObjects;
+    [SerializeField] GameObject[] dJShowObjects;
+    [SerializeField] GameObject[] dJHideObjects;
     [Header("VIP Show And Hide Objects")]
-    public GameObject[] vIPShowObjects;
-    public GameObject[] vIPHideObjects;
+    [SerializeField] GameObject[] vIPShowObjects;
+    [SerializeField] GameObject[] vIPHideObjects;
 
     [Header("Internal UI Stuff")]
-    public TextMeshProUGUI InputScreen;
+    [SerializeField] TextMeshProUGUI InputScreen;
 
-    private VRCPlayerApi player;
-    private string inputString;
-    private bool loggedIn = false;
+    VRCPlayerApi player;
+    string inputString;
+    bool loggedIn = false;
 
     [HideInInspector] public string Key;
 
@@ -63,9 +63,8 @@ public class Keypad_Main : UdonSharpBehaviour
 
         // Autologin Master
         if (isMasterAdmin && targetPlayer.isMaster){
-            targetPlayer.SetPlayerTag("Position", "Admin");
             AdminLogin(targetPlayer);
-            Debug.Log(displayName + " has been given the tag " + "Admin");
+            Debug.Log(displayName + " has been given the tag Admin because they are the master of the instance");
             return;
         }
 
@@ -73,9 +72,8 @@ public class Keypad_Main : UdonSharpBehaviour
         for (int i = 0; i < Admin.Length; i++){
             if (string.IsNullOrEmpty(Admin[i])) continue;
             if (Admin[i] == displayName){	
-                targetPlayer.SetPlayerTag("Position", "Admin");
                 AdminLogin(targetPlayer);
-                Debug.Log(displayName + " has been given the tag " + "Admin");
+                Debug.Log(displayName + " has been given the tag Admin");
                 return;
             }
         }
@@ -84,9 +82,8 @@ public class Keypad_Main : UdonSharpBehaviour
         for (int i = 0; i < Staff.Length; i++){
             if (string.IsNullOrEmpty(Staff[i])) continue;
             if (Staff[i] == displayName){
-                targetPlayer.SetPlayerTag("Position", "Staff");
                 StaffLogin(targetPlayer);
-                Debug.Log(displayName + " has been given the tag " + "Staff");
+                Debug.Log(displayName + " has been given the tag Staff");
                 return;
             }
         }
@@ -95,9 +92,8 @@ public class Keypad_Main : UdonSharpBehaviour
         for (int i = 0; i < DJ.Length; i++){
             if (string.IsNullOrEmpty(DJ[i])) continue;
             if (DJ[i] == displayName){
-                targetPlayer.SetPlayerTag("Position", "DJ");
                 DJLogin(targetPlayer);
-                Debug.Log(displayName + " has been given the tag " + "DJ");
+                Debug.Log(displayName + " has been given the tag DJ");
                 return;
             }
         }
@@ -106,9 +102,8 @@ public class Keypad_Main : UdonSharpBehaviour
         for (int i = 0; i < VIP.Length; i++){
             if (string.IsNullOrEmpty(VIP[i])) continue;
             if (VIP[i] == displayName){
-                targetPlayer.SetPlayerTag("Position", "VIP");
                 VIPLogin(targetPlayer);
-                Debug.Log(displayName + " has been given the tag " + "VIP");
+                Debug.Log(displayName + " has been given the tag VIP");
                 return;
             }
         }
