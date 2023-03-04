@@ -4,7 +4,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 using VRC.Udon.Common.Interfaces;
 
-
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class RoomLockSystem : UdonSharpBehaviour
 {
     [Header("Room Locks")]
@@ -13,10 +13,10 @@ public class RoomLockSystem : UdonSharpBehaviour
     [SerializeField] GameObject R3;
     [SerializeField] GameObject R4;
 
-    [HideInInspector][UdonSynced] public bool R1Locked = false;
-    [HideInInspector][UdonSynced] public bool R2Locked = false;
-    [HideInInspector][UdonSynced] public bool R3Locked = false;
-    [HideInInspector][UdonSynced] public bool R4Locked = false;
+    [HideInInspector][UdonSynced(UdonSyncMode.None)] public bool R1Locked = false;
+    [HideInInspector][UdonSynced(UdonSyncMode.None)] public bool R2Locked = false;
+    [HideInInspector][UdonSynced(UdonSyncMode.None)] public bool R3Locked = false;
+    [HideInInspector][UdonSynced(UdonSyncMode.None)] public bool R4Locked = false;
 
     void Start(){
         _applyToggles();
