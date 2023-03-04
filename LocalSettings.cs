@@ -10,27 +10,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class LocalSettings : UdonSharpBehaviour
 {
     [Header("Toggleable Objects")]
-    public GameObject Lights;
-    public GameObject Disco;
-    public GameObject Shadders;
-    public GameObject Season;
-    public GameObject PotatoStageOn;
-    public GameObject PotatoStageOff;
-    public GameObject PostProcessing;
-    public GameObject PickUps;
-    public GameObject[] Colliders;
+    [SerializeField] GameObject Lights;
+    [SerializeField] GameObject Disco;
+    [SerializeField] GameObject Shadders;
+    [SerializeField] GameObject Season;
+    [SerializeField] GameObject PotatoStageOn;
+    [SerializeField] GameObject PotatoStageOff;
+    [SerializeField] GameObject PostProcessing;
+    [SerializeField] GameObject PickUps;
+    [SerializeField] GameObject[] Colliders;
 
     [Header("Gui Elements, dont touch this!")]
-    public GameObject btn_Lights;
-    public GameObject btn_Disco;
-    public GameObject btn_Potato;
-    public GameObject btn_Shadder;
-    public GameObject btn_Season;
-    public GameObject btn_PickUps;
-    public GameObject btn_Colliders;
+    [SerializeField] GameObject btn_Lights;
+    [SerializeField] GameObject btn_Disco;
+    [SerializeField] GameObject btn_Potato;
+    [SerializeField] GameObject btn_Shadder;
+    [SerializeField] GameObject btn_Season;
+    [SerializeField] GameObject btn_PickUps;
+    [SerializeField] GameObject btn_Colliders;
 
     public void ButtonPress_PotatoStage()
     {
