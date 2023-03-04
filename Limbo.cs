@@ -1,4 +1,4 @@
-﻿using UdonSharp;
+using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
@@ -7,7 +7,7 @@ using VRC.Udon;
 public class Limbo : UdonSharpBehaviour
 {
     [Tooltip("Object to move")]
-    public GameObject limboBar;
+    [SerializeField] GameObject limboBar;
     [Tooltip("Distance to move the object on Y axis")]
     public float distance = 0.5f;
     [Tooltip("Amount of levels the bar can go down")]
