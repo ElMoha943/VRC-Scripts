@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -17,10 +17,10 @@ public class ChairGame : UdonSharpBehaviour
     //[UdonSynced(UdonSyncMode.None)] private float[] posX,posZ;
 
     public float spread;
-    public GameObject initialPosition,sillas_parent;
-    public Slider sldr_silla;
-    public Text txt_silla, Start_but;
-    public Button Next_but;
+    [SerializeField] GameObject initialPosition, sillas_parent;
+    [SerializeField] Slider sldr_silla;
+    [SerializeField] Text txt_silla, Start_but;
+    [SerializeField] Button Next_but;
 
     int size;
     float posx, posz;
