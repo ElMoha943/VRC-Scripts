@@ -46,6 +46,14 @@ Change player gravity on entering an specified region.
 
 Double Jump Script with configurable amount of extra jumps.
 
+## SyncedToggle
+
+Simple syncronized toggle for an array of objects.
+
+## Invoke
+
+Call a method from an external script upon interacting with an object.
+
 # Private Scripts
 
 ## ControlTablet
