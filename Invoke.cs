@@ -1,3 +1,8 @@
+using UdonSharp;
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.Udon;
+
 public class Invoke : UdonSharpBehaviour
 {
     [SerializeField] string methodName;
