@@ -21,9 +21,6 @@ A modified version of [This Roullete](https://ko-fi.com/s/6a6aa3541c), more opti
 ## Limbo
 A game of limbo designed for "El Pecado". 3D Model by Miko.
 
-## KeyPad
-Custom version of [Party Zone´s Keypad](https://labthe3rd.gumroad.com/l/PartyZoneKeypad), optimized and rewritted to work with the ControlTablet.
-
 ## RoomLock System
 Simple synced room lock for "Eupho Club".
 
@@ -58,3 +55,7 @@ Call a method from an external script upon interacting with an object.
 
 ## ControlTablet
 An admin tablet originally made for "El Pecado" club used to control various map toggles, as well as providing some utilities like teleport to common areas, respawn objets, etc. The tablet has now evolved in a complete moderation tool that includes ban, tp to player, bring player, give temporal vip, mute, freeze, etc. Because of the amount of time and effort put on creating and testing this asset it has been removed from this repositoy. The tablet is for sale, if interested talk to me on discord.
+
+## Keypad
+
+A custom keypad that allows you to create access code for your different staff roles, includes autologin and integration with other of my assets.
