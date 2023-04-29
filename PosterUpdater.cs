@@ -2,7 +2,6 @@ using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDK3.Image;
-using VRC.SDK3.StringLoading;
 using VRC.SDKBase;
 using VRC.Udon.Common.Interfaces;
 
