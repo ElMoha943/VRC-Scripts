@@ -1,7 +1,7 @@
 # Udon# Scripts
 A collection of UdonSharp scripts for vrchat.
 
-Disclaimer: some scripts are outdated due to recent changes in the game api. Mostly any function that uses custom network events. If you wish an update send me a message and i will do it.
+Disclaimer: some scripts are outdated due to recent changes in the game api. If you wish an update send me a message and I will do it.
 
 ## ChairGame
 An implementation of the "Musical Chairs" game made for "Xtasis Island Paradise" club.
@@ -58,4 +58,8 @@ An admin tablet originally made for "El Pecado" club used to control various map
 
 ## Keypad
 
-A custom keypad that allows you to create access code for your different staff roles, includes autologin and integration with other of my assets.
+A custom keypad that allows you to create access code for your different staff roles, includes autologin from external link, tag system and integration with other of my assets.
+
+**If you are interested in buying any of my private scripts join my [Discord Server](https://discord.HZFj5ncXPZ)**
+
+![poster](https://github.com/ElMoha943/VRC-Scripts/assets/25410859/74b00d82-843b-40bc-ae3f-1cb53ea4c403)
