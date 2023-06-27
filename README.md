@@ -60,6 +60,6 @@ An admin tablet originally made for "El Pecado" club used to control various map
 
 A custom keypad that allows you to create access code for your different staff roles, includes autologin from external link, tag system and integration with other of my assets.
 
-**If you are interested in buying any of my private scripts join my [Discord Server](https://discord.HZFj5ncXPZ)**
+**If you are interested in buying any of my private scripts join my [Discord Server](https://discord.gg/HZFj5ncXPZ)**
 
 ![poster](https://github.com/ElMoha943/VRC-Scripts/assets/25410859/74b00d82-843b-40bc-ae3f-1cb53ea4c403)
